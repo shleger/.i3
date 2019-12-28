@@ -53,7 +53,10 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run -lines 5 -opacity "65"
 
+#lock with almost black screen
 bindsym $mod+l exec i3lock --color "00000f"
+
+#send lock and suspend to the system: i3lock &&  systemctl suspend
 bindsym $mod+Shift+P exec ~/my/lockOut.sh
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
