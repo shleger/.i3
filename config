@@ -43,6 +43,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#run google google chrome with scaling (lxappearance does not work for this)
+bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=1.3
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -51,6 +54,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run -lines 5 -opacity "65"
 
 bindsym $mod+l exec i3lock --color "00000f"
+bindsym $mod+Shift+P exec ~/my/lockOut.sh
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -182,7 +186,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-         status_command i3status -c ~/.config/i3/i3status.conf
+        status_command i3status -c ~/.config/i3/i3status.conf
 }
 
 #exec /home/saa/my/scaleMonitor2.sh
