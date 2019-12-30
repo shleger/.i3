@@ -151,6 +151,17 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+
+### multiple monitors
+
+#bind second monitor
+bindsym $mod+p move workspace to output right
+
+#switch to defined workspace
+set $firstMonitor  eDP-1
+set $secondMonitor DP-1
+workspace 6 output $secondMonitor 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
