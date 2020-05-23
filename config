@@ -42,7 +42,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec termite
+#bindsym $mod+Return exec termite
+bindsym $mod+Return exec kitty
 
 #run google google chrome with scaling (lxappearance does not work for this)
 bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=1.3 --password-store=gnome
@@ -160,6 +161,14 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+#assign apps to worklaces
+assign [class="idea"] $ws1
+assign [class="zoom"] $ws2
+assign [class="slack"] $ws3
+assign [class="skypeforlinux"] $ws3
+assign [class="teams"] $ws4
+
+
 
 ### multiple monitors
 
@@ -216,3 +225,7 @@ bar {
 }
 
 #exec /home/saa/my/scaleMonitor2.sh
+exec --no-startup-id i3-battery-popup -L 20 -l 15 -t 2m -m BATTARY_LOOOOOW  -n -s /home/saa/power.wav -i /usr/share/icons/Adwaita/96x96/apps/gnome-power-manager-symbolic.symbolic.png
+
+#exec --no-startup-id i3-battery-popup -L 20 -l 15 -m "!!!!! BATTARY !!!!" -n -s /home/saa/power.wav
+# i3-battery-popup -L 20 -l 15 -t 2m -n -s /home/saa/power.wav & -- now started from cli
