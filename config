@@ -165,8 +165,11 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="idea"] $ws1
 assign [class="zoom"] $ws2
 assign [class="slack"] $ws3
-assign [class="skypeforlinux"] $ws3
 assign [class="teams"] $ws4
+assign [class="skypeforlinux"] $ws7
+
+#https://github.com/WillPower3309/dotfiles/blob/master/.config/i3/config
+for_window [title="Android Emulator"] floating enable #android emulator
 
 
 
@@ -221,7 +224,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command i3status -c ~/.config/i3/i3status.conf
+        #status_command i3status -c ~/.config/i3/i3status.conf
+	status_command py3status -c ~/.config/i3/i3status.conf
 }
 
 #exec /home/saa/my/scaleMonitor2.sh
