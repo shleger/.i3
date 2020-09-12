@@ -149,6 +149,14 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+#press the same workspace number
+workspace_auto_back_and_forth yes
+
+#Switch with arrows between workspaces
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -170,6 +178,9 @@ assign [class="skypeforlinux"] $ws7
 
 #https://github.com/WillPower3309/dotfiles/blob/master/.config/i3/config
 for_window [title="Android Emulator"] floating enable #android emulator
+
+for_window [class="Slack" floating] move container to workspace current
+for_window [title="Microsoft Teams"] floating enable
 
 
 
@@ -193,26 +204,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # D-bus notifications with package dunst
 exec_always --no-startup-id dunst -config ~/.config/i3/dunstrc.conf
 
+#turn on floating mode = Mod + Shift + Space bar
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -229,6 +227,7 @@ bar {
 }
 
 #exec /home/saa/my/scaleMonitor2.sh
+# may be odd
 exec --no-startup-id i3-battery-popup -L 20 -l 15 -t 2m -m BATTARY_LOOOOOW  -n -s /home/saa/power.wav -i /usr/share/icons/Adwaita/96x96/apps/gnome-power-manager-symbolic.symbolic.png
 
 #exec --no-startup-id i3-battery-popup -L 20 -l 15 -m "!!!!! BATTARY !!!!" -n -s /home/saa/power.wav
