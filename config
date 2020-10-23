@@ -48,6 +48,9 @@ bindsym $mod+Return exec kitty
 #run google google chrome with scaling (lxappearance does not work for this)
 bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=1.3 --password-store=gnome
 
+#run simple calendar
+bindsym $mod+g exec gsimplecal
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -181,6 +184,7 @@ for_window [title="Android Emulator"] floating enable #android emulator
 
 for_window [class="Slack" floating] move container to workspace current
 for_window [title="Microsoft Teams"] floating enable
+for_window [title="Alacritty"] border none, floating enable move right 560px, move up 230px, 
 
 
 
