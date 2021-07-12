@@ -35,7 +35,7 @@ class Py3status:
              format_string = 'htop{button}'
 
         if button == 3:
-             correct = subprocess.run(['/home/saa/src/js/simple-samples/prices/node_modules/electron/dist/electron', '/home/saa/src/js/simple-samples/prices/app.js', '&'], check=True, text=True)
+             correct = subprocess.run(['~/src/js/simple-samples/prices/node_modules/electron/dist/electron', '/home/saa/src/js/simple-samples/prices/app.js', '&'], check=True, text=True)
              format_string = 'btn{button}'
 
 
