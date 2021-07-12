@@ -48,6 +48,9 @@ bindsym $mod+Return exec kitty
 #run google google chrome with scaling (lxappearance does not work for this)
 bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=1.3 --password-store=gnome
 
+#start vlc video player
+bindsym $mod++shift+v exec vlc
+
 #run simple calendar
 bindsym $mod+g exec gsimplecal
 
@@ -60,6 +63,10 @@ bindsym $mod+d exec rofi -show run -lines 5 -opacity "65"
 
 #lock with almost black screen
 bindsym $mod+z exec i3lock --color "00000f"
+
+# change backlight
+bindsym $mod+F2 exec lightUp.sh
+bindsym $mod+F3 exec lightDown.sh
 
 
 #
@@ -226,13 +233,14 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
+        tray_output primary
         #status_command i3status -c ~/.config/i3/i3status.conf
 	status_command py3status -c ~/.config/i3/i3status.conf
 }
 
 #exec /home/saa/my/scaleMonitor2.sh
 # may be odd
-exec --no-startup-id i3-battery-popup -L 20 -l 15 -t 2m -m BATTARY_LOOOOOW  -n -s /home/saa/power.wav -i /usr/share/icons/Adwaita/96x96/apps/gnome-power-manager-symbolic.symbolic.png
+exec --no-startup-id i3-battery-popup -L 10 -l 6 -t 2m -m BATTARY_LOOOOOW  -n -s /home/saa/power.wav -i /usr/share/icons/Adwaita/96x96/apps/gnome-power-manager-symbolic.symbolic.png
 
 #exec --no-startup-id i3-battery-popup -L 20 -l 15 -m "!!!!! BATTARY !!!!" -n -s /home/saa/power.wav
 # i3-battery-popup -L 20 -l 15 -t 2m -n -s /home/saa/power.wav & -- now started from cli
