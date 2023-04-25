@@ -45,8 +45,8 @@ floating_modifier $mod
 #bindsym $mod+Return exec termite
 bindsym $mod+Return exec kitty
 
-#run google google chrome with scaling (lxappearance does not work for this)
-bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=1.3 --password-store=gnome
+#run browser google chrome with scaling (lxappearance does not work for this)
+bindsym $mod+b exec google-chrome-stable --force-device-scale-factor=1.3 --password-store=gnome
 
 #start vlc video player
 bindsym $mod++shift+v exec vlc
@@ -65,17 +65,17 @@ bindsym $mod+d exec rofi -show run -lines 5 -opacity "65"
 bindsym $mod+z exec i3lock --color "00000f"
 
 # change backlight
-# bindsym $mod+F2 exec lightUp.sh
-# bindsym $mod+F3 exec lightDown.sh
-# bindsym XF86MonBrightnessUp exec lightUp.sh
-# bindsym XF86MonBrightnessDown exec lightDown.sh
+bindsym $mod+F2 exec lightUp.sh
+bindsym $mod+F4 exec lightDown.sh
+#bindsym XF86MonBrightnessUp exec lightUp.sh
+#bindsym XF86MonBrightnessDown exec lightDown.sh
 
 
 #
 bindsym $mod+Shift+s exec flameshot gui
 
-#switch layout
-bindsym capslock exec /usr/local/bin/switch_locale/caps_switch_locale_xkdb.sh
+#switch layout, see ~/.xbindkeysrc
+#bindsym capslock exec /usr/local/bin/switch_locale/caps_switch_locale_xkdb.sh
 
 
 #send lock and suspend to the system: i3lock &&  systemctl suspend
@@ -193,6 +193,7 @@ for_window [title="Android Emulator"] floating enable #android emulator
 
 for_window [class="Slack" floating] move container to workspace current
 for_window [title="Microsoft Teams"] floating enable
+for_window [title="Calculator"] floating enable
 for_window [title="Alacritty"] border none, floating enable move right 560px, move up 230px, 
 
 
