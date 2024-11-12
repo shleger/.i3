@@ -91,10 +91,15 @@ bindsym $mod+Shift+P exec ~/my/lockOut.sh
 #bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
+bindsym $mod+Left      focus left
+bindsym $mod+Shift+Tab focus left
+
 bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Up   focus up
+
+bindsym $mod+Right  focus right
+bindsym $mod+Tab    focus right
+
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -215,6 +220,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # D-bus notifications with package dunst
 exec_always --no-startup-id dunst -config ~/.config/i3/dunstrc.conf
+
+
+#Swap Ctl_L and Alt_L
+exec_always --no-startup-id xmodmap ~/.Xmodmap
+
 
 #turn on floating mode = Mod + Shift + Space bar
 # resize window (you can also use the mouse for that)
