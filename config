@@ -223,7 +223,7 @@ exec_always --no-startup-id dunst -config ~/.config/i3/dunstrc.conf
 
 
 #Swap Ctl_L and Alt_L
-exec_always --no-startup-id xmodmap ~/.Xmodmap
+exec_always --no-startup-id setxkbmap -option ctrl:swap_lalt_lctl
 
 
 #turn on floating mode = Mod + Shift + Space bar
